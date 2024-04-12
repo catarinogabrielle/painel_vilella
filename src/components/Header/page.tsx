@@ -4,13 +4,14 @@ import { useEffect, useState } from 'react';
 import Image from "next/image";
 import styles from "./page.module.scss";
 import Link from "next/link";
-import { MdDashboard, MdViewList, MdPayments } from "react-icons/md";
+import { MdDashboard, MdViewList, MdPayments, MdMenu } from "react-icons/md";
 
 export default function Header() {
   const [on, setOn] = useState(false)
   const [dashboard, setDashboard] = useState(false)
   const [presence, setPresence] = useState(false)
   const [payment, setPeyment] = useState(false)
+  const [open, setOpen] = useState(false)
 
   useEffect(() => {
     if (window.location.pathname == "/") {
@@ -37,7 +38,9 @@ export default function Header() {
   }, [on])
 
   return (
-    <div className={styles.container}>
+    <div className={open ? styles.containerOpen : styles.containerClose}>
+      <MdMenu onClick={() => setOpen(!open)} className={styles.menu} />
+
       <Image
         src="/logo_vilella.png"
         width={200}

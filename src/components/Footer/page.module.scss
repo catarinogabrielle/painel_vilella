@@ -6,6 +6,10 @@
     background-color: #272727;
     flex-direction: column;
     padding: 18px;
+
+    @media only screen and (max-width: 860px) {
+        display: none;
+    }
 }
 
 .footerInfo {

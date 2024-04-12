@@ -1,9 +1,35 @@
-.container {
+.containerOpen,
+.containerClose {
     display: flex;
     flex-direction: column;
     background-color: #eeeeee;
     height: 100vh;
     align-items: center;
+    transition: 0.4s;
+}
+
+@media only screen and (max-width: 860px) {
+    .containerClose {
+        position: absolute;
+        left: -100%;
+    }
+
+    .containerOpen {
+        position: absolute;
+        left: 0%;
+    }
+}
+
+.menu {
+    display: none;
+
+    @media only screen and (max-width: 860px) {
+        display: flex;
+        position: fixed;
+        right: 20px;
+        font-size: 35px;
+        top: 20px;
+    }
 }
 
 .logo {
