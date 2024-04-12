@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import Image from "next/image";
 import styles from "./page.module.scss";
 import Link from "next/link";
-import { MdDashboard, MdViewList, MdPayments, MdMenu } from "react-icons/md";
+import { MdDashboard, MdViewList, MdPayments, MdMenu, MdClose } from "react-icons/md";
 
 export default function Header() {
   const [on, setOn] = useState(false)
@@ -39,7 +39,11 @@ export default function Header() {
 
   return (
     <div className={open ? styles.containerOpen : styles.containerClose}>
-      <MdMenu onClick={() => setOpen(!open)} className={styles.menu} />
+      {open ? (
+        <MdClose onClick={() => setOpen(!open)} className={styles.menu} />
+      ) : (
+        <MdMenu onClick={() => setOpen(!open)} className={styles.menu} />
+      )}
 
       <Image
         src="/logo_vilella.png"
