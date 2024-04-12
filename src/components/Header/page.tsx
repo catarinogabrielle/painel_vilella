@@ -53,17 +53,17 @@ export default function Header() {
         alt="logo"
       />
 
-      <Link className={dashboard ? styles.linkOn : styles.link} href='/'>
+      <Link onClick={() => setOpen(false)} className={dashboard ? styles.linkOn : styles.link} href='/'>
         <MdDashboard className={dashboard ? styles.iconOn : styles.icon} />
         <h2>Dashboard</h2>
       </Link>
 
-      <Link className={presence ? styles.linkOn : styles.link} href='/Presence'>
+      <Link onClick={() => setOpen(false)} className={presence ? styles.linkOn : styles.link} href='/Presence'>
         <MdViewList className={presence ? styles.iconOn : styles.icon} />
         <h2>Presença</h2>
       </Link>
 
-      <Link className={payment ? styles.linkOn : styles.link} href='/Payments'>
+      <Link onClick={() => setOpen(false)} className={payment ? styles.linkOn : styles.link} href='/Payments'>
         <MdPayments className={payment ? styles.iconOn : styles.icon} />
         <h2>Contas a pagar</h2>
       </Link>
