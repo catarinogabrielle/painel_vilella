@@ -3,7 +3,7 @@ import styles from "./page.module.scss";
 export default function Presence() {
   return (
     <div className={styles.container}>
-      <text>vilella</text>
+      <h1>Presença</h1>
     </div>
   );
 }

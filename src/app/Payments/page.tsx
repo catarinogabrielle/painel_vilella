@@ -1,9 +1,9 @@
 import styles from "./page.module.scss";
 
-export default function Home() {
+export default function Payments() {
   return (
     <div className={styles.container}>
-      <h1>Dashboard</h1>
+      <h1>Contas a pagar</h1>
     </div>
   );
 }

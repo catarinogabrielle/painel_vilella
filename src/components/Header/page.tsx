@@ -4,22 +4,31 @@ import { useEffect, useState } from 'react';
 import Image from "next/image";
 import styles from "./page.module.scss";
 import Link from "next/link";
-import { MdDashboard, MdViewList } from "react-icons/md";
+import { MdDashboard, MdViewList, MdPayments } from "react-icons/md";
 
 export default function Header() {
   const [on, setOn] = useState(false)
   const [dashboard, setDashboard] = useState(false)
   const [presence, setPresence] = useState(false)
+  const [payment, setPeyment] = useState(false)
 
   useEffect(() => {
     if (window.location.pathname == "/") {
       setDashboard(true)
       setPresence(false)
+      setPeyment(false)
     }
 
     if (window.location.pathname == "/Presence") {
       setDashboard(false)
       setPresence(true)
+      setPeyment(false)
+    }
+
+    if (window.location.pathname == "/Payments") {
+      setDashboard(false)
+      setPresence(false)
+      setPeyment(true)
     }
 
     setTimeout(() => {
@@ -45,6 +54,11 @@ export default function Header() {
       <Link className={presence ? styles.linkOn : styles.link} href='/Presence'>
         <MdViewList className={presence ? styles.iconOn : styles.icon} />
         <h2>Presença</h2>
+      </Link>
+
+      <Link className={payment ? styles.linkOn : styles.link} href='/Payments'>
+        <MdPayments className={payment ? styles.iconOn : styles.icon} />
+        <h2>Contas a pagar</h2>
       </Link>
     </div>
   );
